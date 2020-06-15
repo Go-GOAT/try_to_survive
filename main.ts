@@ -1,36 +1,35 @@
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.player1.moveSprite(sprite1, 100, 100)
 })
-controller.player4.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    controller.player4.moveSprite(sprite4, 100, 100)
-})
-controller.player3.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
-    controller.player3.moveSprite(mySprite3, 100, 100)
-})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.player2.moveSprite(mySprite2, 100, 100)
 })
-let sprite4: Sprite = null
-let mySprite3: Sprite = null
+controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+	
+})
 let mySprite2: Sprite = null
 let sprite1: Sprite = null
 sprite1 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 8 8 8 8 8 8 8 8 8 8 . 8 8 
-. . . 8 f f f f f f f f 8 8 8 8 
-. . . 8 f 1 f 1 1 f 1 f 8 8 8 . 
-. . . 8 f 1 1 1 1 1 1 f 8 . f . 
-. . . 8 8 f f 4 4 f f f 8 . f . 
-. . . 8 8 f f f f f f 8 8 . f . 
-. f f f f f 1 f f 1 f f f f f 1 
-. f . . . f 1 f f 1 f . . . 8 . 
-. f 8 . . f f f f f f . . 8 . . 
-. f . 8 . f f f f f f . 8 . . . 
-. f . . f f f f f f f f . . . . 
-. f . 8 . f f f f f f . 1 . . . 
-8 . 8 . . f f f f f f . . 8 . . 
-. 8 . 8 . f f . . f f . . . 8 . 
-8 . . . . f f . . f f . . . 8 8 
+4 1 8 8 8 1 8 8 1 1 8 1 1 8 8 1 8 8 1 8 
+4 1 1 8 1 1 8 8 1 8 8 1 8 8 1 1 8 1 1 8 
+4 8 1 1 f f f f f f f f 8 1 1 8 1 1 1 8 
+4 1 1 8 f 1 f 1 1 f 1 f 1 1 8 1 1 1 1 8 
+1 8 1 8 f 1 1 1 1 1 1 f 8 7 f 8 8 8 8 8 
+1 1 1 1 8 f f 4 4 f f f 8 7 f 1 1 1 1 8 
+4 1 1 1 1 f f f f f f 8 8 7 f 8 8 8 1 1 
+4 f f f f f 1 f f 1 f f f f f 1 8 8 8 8 
+1 f 7 7 7 f 1 f f 1 f 7 7 7 8 8 1 8 8 8 
+4 f 1 7 7 f f f f f f 7 7 7 8 8 1 1 8 8 
+1 4 1 1 7 f f f f f f 7 7 1 8 8 8 1 8 8 
+4 4 4 1 f f f f f f 7 7 8 1 1 8 8 8 1 8 
+4 1 1 8 1 f f f f f f 8 1 8 1 1 8 8 1 1 
+1 1 4 8 1 f f f f f f 8 8 1 8 1 1 8 8 8 
+1 8 8 1 8 f f 8 8 f f 8 8 1 1 8 1 8 8 8 
+1 1 1 1 8 f f 8 8 f f 8 8 8 1 1 1 1 8 8 
+1 8 1 1 1 8 1 8 1 8 8 1 8 8 8 1 1 1 1 8 
+8 1 1 8 1 1 1 1 1 8 8 1 1 8 8 8 1 8 1 1 
+1 1 8 8 1 8 1 1 8 8 8 8 1 1 8 8 8 1 1 8 
+8 8 8 1 1 8 1 8 8 8 8 8 8 1 1 8 8 8 1 8 
 `, SpriteKind.Player)
 mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -57,42 +56,6 @@ mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-mySprite3 = sprites.create(img`
-. . . . f f f f f . . . . . . . 
-. . . f e e e e e f . . . . . . 
-. . f d d d d e e e f . . . . . 
-. c d f d d f d e e f f . . . . 
-. c d f d d f d e e d d f . . . 
-c d e e d d d d e e b d c . . . 
-c d d d d c d d e e b d c . f f 
-c c c c c d d d e e f c . f e f 
-. f d d d d d e e f f . . f e f 
-. . f f f f f e e e e f . f e f 
-. . . . f e e e e e e e f f e f 
-. . . f e f f e f e e e e f f . 
-. . . f e f f e f e e e e f . . 
-. . . f d b f d b f f e f . . . 
-. . . f d d c d d b b d f . . . 
-. . . . f f f f f f f f f . . . 
-`, SpriteKind.Player)
-sprite4 = sprites.create(img`
-. . . . c c c b b b b b . . . . 
-. . c c b 4 4 4 4 4 4 b b b . . 
-. c c 4 4 4 4 4 5 4 4 4 4 b c . 
-. e 4 4 4 4 4 4 4 4 4 5 4 4 e . 
-e b 4 5 4 4 5 4 4 4 4 4 4 4 b c 
-e b 4 4 4 4 4 4 4 4 4 4 5 4 4 e 
-e b b 4 4 4 4 4 4 4 4 4 4 4 b e 
-. e b 4 4 4 4 4 5 4 4 4 4 b e . 
-8 7 e e b 4 4 4 4 4 4 b e e 6 8 
-8 7 2 e e e e e e e e e e 2 7 8 
-e 6 6 2 2 2 2 2 2 2 2 2 2 6 c e 
-e c 6 7 6 6 7 7 7 6 6 7 6 c c e 
-e b e 8 8 c c 8 8 c c c 8 e b e 
-e e b e c c e e e e e c e b e e 
-. e e b b 4 4 4 4 4 4 4 4 e e . 
-. . . c c c c c e e e e e . . . 
 `, SpriteKind.Player)
 scene.setBackgroundImage(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -296,3 +259,5 @@ scene.setBackgroundImage(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `)
+info.setLife(11)
+info.changeLifeBy(-1)
