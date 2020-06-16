@@ -1,9 +1,10 @@
 {
-    "name": "l",
+    "name": "try to survive",
     "dependencies": {
         "device": "*",
         "controller": "*",
-        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0",
+        "try to survive": "github:go-goat/try_to_survive#master"
     },
     "description": "",
     "files": [
